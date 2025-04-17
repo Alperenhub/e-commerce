@@ -10,6 +10,8 @@ builder.Services.AddDbContext<DataContext>(oprions=>{
     oprions.UseSqlite(connectionString);
 }); //mysql dataContext'te bağlansın istedik
 
+builder.Services.AddCors();
+
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -26,6 +28,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(opt => { 
+    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3001");
+}); //Cors policy'i kaldırdım
 
 app.UseAuthorization();
 
