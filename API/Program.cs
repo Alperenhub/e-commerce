@@ -3,35 +3,47 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddDbContext<DataContext>(oprions=>{
-    var config = builder.Configuration;
-    var connectionString = config.GetConnectionString("defaultConnection");
-    oprions.UseSqlite(connectionString);
-}); //mysql dataContext'te bağlansın istedik
+// DbContext
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("defaultConnection");
+    options.UseSqlite(connectionString);
+});
 
-builder.Services.AddCors();
+// ✅ CORS policy tanımı
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("http://localhost:3000");
+    });
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Swagger
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseSwaggerUI(options => {
-        options.SwaggerEndpoint("/openapi/v1.json","Demo API");
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "Demo API");
     });
 }
 
+
+// ✅ CORS middleware'ini doğru sırayla uygula
+app.UseCors("AllowReactApp");
+
 app.UseHttpsRedirection();
 
-app.UseCors(opt => { 
-    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3001");
-}); //Cors policy'i kaldırdım
+
 
 app.UseAuthorization();
 
