@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IProduct } from "./model/IProduct";
 import { Header } from "./components/Header";
 import { ProductList } from "./components/ProductList";
+import ButtonUsage from "./components/ButtonUsage";
 
 // Ürün tipi tanımı
 
@@ -40,6 +41,7 @@ function App() {
       <Header products={products} addProduct={addProduct} />
       <p>Hor görme hiç bu keli</p>
       <ProductList products={products} addProduct={addProduct} />
+      <ButtonUsage/>
     </>
   );
 }
@@ -48,7 +50,10 @@ function App() {
 
 // Props tipi tanımı
 
-
+type ProductType = {
+  name: string;
+  price: number;
+};
 
 
 // Props tipi tanımı
@@ -56,17 +61,17 @@ type ProductProps = {
   products: ProductType[];
 };
 
-export const Product = ({ products }: ProductProps) => {
-  return (
-    <>
-      {products.map((item, index) => (
-        <div key={index}>
-          <h3>{item.name}</h3>
-          <h5>{item.price}</h5>
-        </div>
-      ))}
-    </>
-  );
-};
+// export const Product = ({ products }: ProductProps) => {
+//   return (
+//     <>
+//       {products.map((item, index) => (
+//         <div key={index}>
+//           <h3>{item.name}</h3>
+//           <h5>{item.price}</h5>
+//         </div>
+//       ))}
+//     </>
+//   );
+// };
 
 export default App;

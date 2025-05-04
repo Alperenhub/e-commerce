@@ -1,16 +1,23 @@
-import { Product } from "../App";
+import { IProduct } from "../model/IProduct";
+import { Product } from "./Product";
 
-type ProductListProps = {
-    products: ProductType[];
+// type ProductListProps = {
+//     products: ProductType[];
+//     addProduct: () => void;
+//   };
+
+  // type ProductType = {
+  //   name: string;
+  //   price: number;
+  //   description:string;
+  // };
+
+  interface Props {
+    products: IProduct[],
     addProduct: () => void;
-  };
+  }
 
-  type ProductType = {
-    name: string;
-    price: number;
-  };
-
-export const ProductList = ({ products, addProduct }: ProductListProps) => {
+export const ProductList = ({ products, addProduct }: Props) => {
     return (
       <div>
         <p>Product info</p>
