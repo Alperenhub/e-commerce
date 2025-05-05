@@ -43,6 +43,7 @@ app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
 
 
 app.UseAuthorization();

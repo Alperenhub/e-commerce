@@ -6,7 +6,7 @@ import { Product } from "./Product";
 
 
   interface Props {
-    products: IProduct[],
+    products: IProduct,
     addProduct: () => void;
   }
 
@@ -15,7 +15,7 @@ export const ProductList = ({ products, addProduct }: Props) => {
       <Grid container spacing={2}>
         <p>Product info</p>
         <Grid size={{xs:6,md:4,lg:3}}>
-        <Product products={products} />
+        <Product product={products} />
         </Grid>
         <button onClick={addProduct}>Ürün ekle</button>
       </Grid>

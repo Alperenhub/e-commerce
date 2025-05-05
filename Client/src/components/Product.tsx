@@ -1,23 +1,21 @@
-type ProductProps = {
-    products: ProductType[];
-  };
+import { Card, CardMedia, Typography } from "@mui/material";
+import { IProduct } from "../model/IProduct";
 
-  type ProductType = {
-    name: string;
-    price: number;
-    description: string;
-  };
+interface Props{
+  product: IProduct
+}
 
-export const Product = ({ products }: ProductProps) => {
+export const Product = ({ product }: Props) => {
   return (
     <>
-      {products.map((item, index) => (
-        <div key={index}>
-          <h3>{item.name}</h3>
-          <h5>{item.price}</h5>
-          <h3>{item.description}</h3>
-        </div>
-      ))}
+
+      <Card>
+        <CardMedia image={`http://localhost:5173/images/${product.imageUrl}`}/>
+        <Typography gutterBottom variant="h6" component="h2" color="text-secondary">
+          {product.name}
+        </Typography>     
+      </Card>
+
     </>
   );
 };
