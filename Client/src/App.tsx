@@ -3,6 +3,7 @@ import { IProduct } from "./model/IProduct";
 import { Header } from "./components/Header";
 import { ProductList } from "./components/ProductList";
 import ButtonUsage from "./components/ButtonUsage";
+import { Container, CssBaseline } from "@mui/material";
 
 // Ürün tipi tanımı
 
@@ -38,16 +39,20 @@ function App() {
 
   return (
     <>
+    <CssBaseline/> 
       <Header products={products} addProduct={addProduct} />
+      <Container>
       <p>Hor görme hiç bu keli</p>
       <ProductList products={products} addProduct={addProduct} />
+      </Container>
+
       <ButtonUsage/>
     </>
   );
 }
 
-
-
+//Container içine koyduklarımız responsive
+//sayfadaki margin ve paddingleri sıfırlar CssBaseline
 // Props tipi tanımı
 
 type ProductType = {

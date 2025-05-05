@@ -1,16 +1,9 @@
+import { Grid } from "@mui/material";
 import { IProduct } from "../model/IProduct";
 import { Product } from "./Product";
 
-// type ProductListProps = {
-//     products: ProductType[];
-//     addProduct: () => void;
-//   };
 
-  // type ProductType = {
-  //   name: string;
-  //   price: number;
-  //   description:string;
-  // };
+
 
   interface Props {
     products: IProduct[],
@@ -19,10 +12,12 @@ import { Product } from "./Product";
 
 export const ProductList = ({ products, addProduct }: Props) => {
     return (
-      <div>
+      <Grid container spacing={2}>
         <p>Product info</p>
+        <Grid size={{xs:6,md:4,lg:3}}>
         <Product products={products} />
+        </Grid>
         <button onClick={addProduct}>Ürün ekle</button>
-      </div>
+      </Grid>
     );
   };
