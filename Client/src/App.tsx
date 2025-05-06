@@ -41,10 +41,10 @@ function App() {
   return (
     <>
     <CssBaseline/> 
-      <Header products={products} addProduct={addProduct} />
+      <Header/>
       <Container>
       <p>Hor görme hiç bu keli</p>
-      <ProductList products={products} addProduct={addProduct} />
+      <ProductList products={products} />
       </Container>
 
       <ButtonUsage/>

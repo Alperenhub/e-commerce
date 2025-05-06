@@ -3,13 +3,14 @@ import { IProduct } from "../model/IProduct";
 import { AddShoppingCart, Search } from "@mui/icons-material";
 
 interface Props{
-  product: IProduct
+  product: IProduct[]
 }
 
 export const Product = ({ product }: Props) => {
   return (
     <>
-
+      {product.map(product)=>(
+        
       <Card>
         <CardMedia sx={{height:160, backgroundSize:"contain"}} image={`http://localhost:5173/images/${product.imageUrl}`}/>
         <CardContent>
@@ -26,6 +27,8 @@ export const Product = ({ product }: Props) => {
 
         </CardActions>   
       </Card>
+      )
+      }
 
     </>
   );

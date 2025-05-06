@@ -6,7 +6,7 @@ import { Product } from "./Product";
 
 
   interface Props {
-    products: IProduct,
+    products: IProduct[],
     // addProduct: () => void;
   }
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "svAK4rJS1in16Ca9SPHggVTSFIaidK50GjkJ2dggK5Q=",
+  "Hash": "QzRI8Ldi/KJ0K/qQ+MdwKUUEYJgQRf0LMIMFUTqwQ3Q=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -36,6 +36,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\2.jpeg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/2#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i9m80nyb5q",
+      "Integrity": "tr6U7EPyzFsgK6SOZirKYbeEPCuIyu0kbW5K8uDoq3E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\2.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\xd.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/xd#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c1wtm19g94",
+      "Integrity": "cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\xd.png"
     }
   ],
   "Endpoints": [
@@ -118,6 +160,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-3Fr046DtqELf0gl6AAU9gPTwsMvAI8c2KISisARHxZU="
+        }
+      ]
+    },
+    {
+      "Route": "images/2.i9m80nyb5q.jpeg",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "790610"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tr6U7EPyzFsgK6SOZirKYbeEPCuIyu0kbW5K8uDoq3E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 09:18:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i9m80nyb5q"
+        },
+        {
+          "Name": "label",
+          "Value": "images/2.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tr6U7EPyzFsgK6SOZirKYbeEPCuIyu0kbW5K8uDoq3E="
+        }
+      ]
+    },
+    {
+      "Route": "images/2.jpeg",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "790610"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tr6U7EPyzFsgK6SOZirKYbeEPCuIyu0kbW5K8uDoq3E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 09:18:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tr6U7EPyzFsgK6SOZirKYbeEPCuIyu0kbW5K8uDoq3E="
+        }
+      ]
+    },
+    {
+      "Route": "images/xd.c1wtm19g94.png",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\xd.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 09:21:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c1wtm19g94"
+        },
+        {
+          "Name": "label",
+          "Value": "images/xd.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE="
+        }
+      ]
+    },
+    {
+      "Route": "images/xd.png",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\xd.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 09:21:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE="
         }
       ]
     }
