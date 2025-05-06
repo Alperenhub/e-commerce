@@ -27,7 +27,8 @@ function App() {
     setProducts([
       ...products,
       {
-        name: "product 4", price: 4000,
+        name: "product 4",
+        price: 4000,
         id: 5,
         description: "aciklama",
         isActive: true,
@@ -66,17 +67,5 @@ type ProductProps = {
   products: ProductType[];
 };
 
-// export const Product = ({ products }: ProductProps) => {
-//   return (
-//     <>
-//       {products.map((item, index) => (
-//         <div key={index}>
-//           <h3>{item.name}</h3>
-//           <h5>{item.price}</h5>
-//         </div>
-//       ))}
-//     </>
-//   );
-// };
 
 export default App;
