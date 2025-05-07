@@ -5,7 +5,6 @@ import { ProductList } from "./components/ProductList";
 import ButtonUsage from "./components/ButtonUsage";
 import { Container, CssBaseline } from "@mui/material";
 
-// Ürün tipi tanımı
 
 
 function App() {

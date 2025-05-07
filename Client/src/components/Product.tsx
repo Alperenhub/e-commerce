@@ -7,15 +7,24 @@ interface Props{
 }
 
 export const Product = ({ product }: Props) => {
+
+  product.map(img =>(
+    console.log("IMG url budur: "+img.imageUrl)
+  ))
+
+
   return (
     <>
-      {product.map(product)=>(
+      {product.map(product=>(
         
       <Card>
         <CardMedia sx={{height:160, backgroundSize:"contain"}} image={`http://localhost:5173/images/${product.imageUrl}`}/>
         <CardContent>
         <Typography gutterBottom variant="h6" component="h2" color="text-secondary">
           {product.name}
+        </Typography> 
+        <Typography gutterBottom variant="h6" component="h2" color="text-secondary">
+          {product.description}
         </Typography> 
         <Typography variant="body2" component="h2" color="text-secondary">
           {(product.price/100).toFixed(2)}$
@@ -27,7 +36,8 @@ export const Product = ({ product }: Props) => {
 
         </CardActions>   
       </Card>
-      )
+
+      ))
       }
 
     </>

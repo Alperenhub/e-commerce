@@ -41,9 +41,9 @@ if (app.Environment.IsDevelopment())
 // ✅ CORS middleware'ini doğru sırayla uygula
 app.UseCors("AllowReactApp");
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-// app.UseStaticFiles();
+app.UseStaticFiles();
 
 
 app.UseAuthorization();

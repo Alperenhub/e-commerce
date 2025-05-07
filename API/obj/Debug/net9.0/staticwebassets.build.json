@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QzRI8Ldi/KJ0K/qQ+MdwKUUEYJgQRf0LMIMFUTqwQ3Q=",
+  "Hash": "AdFkOhwRRO2x1HC1fYOqJuQYyjbAaAy3Dv9AgkFBqK8=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -59,12 +59,12 @@
       "OriginalItemSpec": "wwwroot\\images\\2.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\xd.png",
+      "Identity": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\3.png",
       "SourceId": "API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\",
       "BasePath": "_content/API",
-      "RelativePath": "images/xd#[.{fingerprint}]?.png",
+      "RelativePath": "images/3#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -77,7 +77,7 @@
       "Integrity": "cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\xd.png"
+      "OriginalItemSpec": "wwwroot\\images\\3.png"
     }
   ],
   "Endpoints": [
@@ -246,8 +246,8 @@
       ]
     },
     {
-      "Route": "images/xd.c1wtm19g94.png",
-      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\xd.png",
+      "Route": "images/3.c1wtm19g94.png",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -282,7 +282,7 @@
         },
         {
           "Name": "label",
-          "Value": "images/xd.png"
+          "Value": "images/3.png"
         },
         {
           "Name": "integrity",
@@ -291,8 +291,8 @@
       ]
     },
     {
-      "Route": "images/xd.png",
-      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\xd.png",
+      "Route": "images/3.png",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
