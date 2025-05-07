@@ -8,9 +8,7 @@ interface Props{
 
 export const Product = ({ product }: Props) => {
 
-  product.map(img =>(
-    console.log("IMG url budur: "+img.imageUrl)
-  ))
+
 
 
   return (

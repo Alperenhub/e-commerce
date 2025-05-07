@@ -85,8 +85,8 @@
       ]
     },
     {
-      "Route": "images/2.i9m80nyb5q.jpeg",
-      "AssetFile": "images/2.jpeg",
+      "Route": "images/2.i9m80nyb5q.jpg",
+      "AssetFile": "images/2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -125,13 +125,13 @@
         },
         {
           "Name": "label",
-          "Value": "images/2.jpeg"
+          "Value": "images/2.jpg"
         }
       ]
     },
     {
-      "Route": "images/2.jpeg",
-      "AssetFile": "images/2.jpeg",
+      "Route": "images/2.jpg",
+      "AssetFile": "images/2.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -167,8 +167,8 @@
       ]
     },
     {
-      "Route": "images/3.c1wtm19g94.png",
-      "AssetFile": "images/3.png",
+      "Route": "images/3.c1wtm19g94.jpg",
+      "AssetFile": "images/3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -185,7 +185,7 @@
         },
         {
           "Name": "Content-Type",
-          "Value": "image/png"
+          "Value": "image/jpeg"
         },
         {
           "Name": "ETag",
@@ -207,13 +207,13 @@
         },
         {
           "Name": "label",
-          "Value": "images/3.png"
+          "Value": "images/3.jpg"
         }
       ]
     },
     {
-      "Route": "images/3.png",
-      "AssetFile": "images/3.png",
+      "Route": "images/3.jpg",
+      "AssetFile": "images/3.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -230,7 +230,7 @@
         },
         {
           "Name": "Content-Type",
-          "Value": "image/png"
+          "Value": "image/jpeg"
         },
         {
           "Name": "ETag",
