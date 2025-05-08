@@ -8,9 +8,6 @@ interface Props{
 
 export const Product = ({ product }: Props) => {
 
-
-
-
   return (
     <>
       {product.map(product=>(
