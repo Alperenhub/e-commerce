@@ -31,7 +31,7 @@ const navStyles = {
         <Typography variant="h6">E-commerce</Typography>
         <List sx={{display:"flex"}}>
           {links.map(link =>
-            <ListItem component={NavLink} to={link.to} sx={navStyles}>{link.title}</ListItem>
+            <ListItem key={link.to} component={NavLink} to={link.to} sx={navStyles}>{link.title}</ListItem>
           )}
         </List>
         </Box>
