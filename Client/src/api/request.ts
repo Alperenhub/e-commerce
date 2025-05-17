@@ -8,10 +8,21 @@ axios.defaults.baseURL = "http://localhost:5173/api/";
 axios.interceptors.response.use(response => {
     return response},
  (error: AxiosError)=>{
+    if(!error.response){
+        toast.error("Sunucuya ulaşılamadı!");
+        return Promise.reject(error);
+    }
     const {data, status} = error.response as AxiosResponse;
         switch(status){
             case 400:
-            toast.error(data.title);
+            if(data.errors){
+                const modelErrors : string[] = [];
+
+                for(const key in data.errors){
+                    modelErrors.push(data.errors[key]);
+                }
+                throw modelErrors;
+            }
             break;
             case 401:
             toast.error(data.title);
