@@ -11,6 +11,8 @@ public class DataContext :DbContext
     }
     public DbSet<Product> Products => Set<Product>();  //uyarıyı engellemek için yaptık ayrıca:{ get; set; } = null!;
 
+    public DbSet<Cart> Carts => Set<Cart>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
