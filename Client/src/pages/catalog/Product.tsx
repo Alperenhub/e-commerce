@@ -2,12 +2,28 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@
 import { IProduct } from "../../model/IProduct";
 import { AddShoppingCart, Search } from "@mui/icons-material";
 import { Link } from "react-router";
+import { useState } from "react";
+import requests from "../../api/request";
+import { LoadingButton } from '@mui/lab';
+
 
 interface Props{
   product: IProduct[]
 }
 
 export const Product = ({ product }: Props) => {
+
+  const [loading,setLoading] = useState(false);
+  
+  function handleAddItem(productId: number){
+    
+    setLoading(true);
+
+    requests.Cart.addItem(productId)
+      .then(cart => console.log(cart))
+      .catch(error => console.log(error))
+      .finally(()=> setLoading(false));
+  }
 
   return (
     <>
@@ -27,7 +43,15 @@ export const Product = ({ product }: Props) => {
         </Typography> 
         </CardContent> 
         <CardActions>
-          <Button variant="outlined" size="small" startIcon={<AddShoppingCart/>}>Add to Cart</Button>
+
+          <LoadingButton
+          variant="outlined"
+          loadingPosition="start"
+          size= "small"
+          startIcon={<AddShoppingCart/>} 
+          loading={loading} 
+          onClick={()=> handleAddItem(product.id)}>Sepete Ekle</LoadingButton> 
+
           <Button component={Link} to={`/catalog/${product.id}`} variant="outlined" size="small" startIcon={<Search/>}>View</Button>
 
         </CardActions>   
