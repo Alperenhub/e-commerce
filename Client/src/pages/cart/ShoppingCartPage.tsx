@@ -1,20 +1,17 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import requests from "../../api/request"
 import { CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { Cart } from "../../model/ICart";
 import { Delete } from "@mui/icons-material";
+import { CartContext, useCartContext } from "../../context/CartContext";
 
 export default function ShoppingCartPage(){
 
-    const [cart, setCart] = useState<Cart| null>()
     const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-        requests.Cart.get()
-        .then(cart => setCart(cart))
-        .catch(error => console.log(error))
-        .finally(()=>setLoading(false));
-    },[]);
+    const { cart } = useCartContext();
+
+  
 
     if(loading) return <CircularProgress/>
 
