@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\images\\3.jpg"
     },
     {
+      "Id": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\4.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

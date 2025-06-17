@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KGhVQFMj3RPD8gpb6S6jMYdStYb1T4mQ+jwg+rrQrAM=",
+  "Hash": "hz79mZ8sBXgINMhzPd5AdMS+kDaeV+2LEWpgn1zhnXU=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\4.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xyzw8ogmq1",
+      "Integrity": "55nTDTRWbNf58YHiPGHtaDCidm79rsV1CtHEPQDs+7c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\4.jpg"
     }
   ],
   "Endpoints": [
@@ -324,6 +345,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-cFFI+nQeWZN+U53IL19AwWPqSoGJ8FFhx+hP0whWWCE="
+        }
+      ]
+    },
+    {
+      "Route": "images/4.jpg",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"55nTDTRWbNf58YHiPGHtaDCidm79rsV1CtHEPQDs+7c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Jun 2025 19:31:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-55nTDTRWbNf58YHiPGHtaDCidm79rsV1CtHEPQDs+7c="
+        }
+      ]
+    },
+    {
+      "Route": "images/4.xyzw8ogmq1.jpg",
+      "AssetFile": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\wwwroot\\images\\4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9153"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"55nTDTRWbNf58YHiPGHtaDCidm79rsV1CtHEPQDs+7c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Jun 2025 19:31:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xyzw8ogmq1"
+        },
+        {
+          "Name": "label",
+          "Value": "images/4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-55nTDTRWbNf58YHiPGHtaDCidm79rsV1CtHEPQDs+7c="
         }
       ]
     }

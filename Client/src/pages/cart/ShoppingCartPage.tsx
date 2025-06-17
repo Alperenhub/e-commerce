@@ -1,9 +1,7 @@
-import { useContext, useEffect, useState } from "react"
-import requests from "../../api/request"
+import { useState } from "react"
 import { CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { Cart } from "../../model/ICart";
 import { Delete } from "@mui/icons-material";
-import { CartContext, useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 
 export default function ShoppingCartPage(){
 
@@ -13,7 +11,7 @@ export default function ShoppingCartPage(){
 
   
 
-    if(loading) return <CircularProgress/>
+    // if(loading) return <CircularProgress/>
 
     if(!cart) return <h1>Sepetinizde ürün yok.</h1>
 
