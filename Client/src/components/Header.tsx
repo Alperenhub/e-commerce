@@ -26,7 +26,7 @@ const navStyles = {
 // Header component
  export const Header = () => {
   const {cart} = useCartContext();
-  const itemCount = cart?.cartItems.reduce((total,item)=>total+ item.quantity,0);
+  const itemCount = cart?.cartItems?.reduce((total,item)=>total+ item.quantity,0);
     return(
      <AppBar position="static" sx={{mb:4}}>
       <Toolbar sx={{display:"flex", justifyContent:"space-between"}}>

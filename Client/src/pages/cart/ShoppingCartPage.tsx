@@ -1,19 +1,40 @@
 import { useState } from "react"
-import { CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { Delete } from "@mui/icons-material";
+import { Alert, CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { AddCircleOutline, AddCircleOutlineOutlined, Delete, RemoveCircleOutline } from "@mui/icons-material";
 import { useCartContext } from "../../context/CartContext";
+import { LoadingButton } from "@mui/lab";
+import requests from "../../api/request";
 
 export default function ShoppingCartPage(){
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
-    const { cart } = useCartContext();
+    const { cart, setCart } = useCartContext();
 
+    function handleAddItem(productId: number){
+
+        setLoading(true);
+
+        requests.Cart.addItem(productId)
+        .then(cart => setCart(cart))
+        .catch(error => console.log(error))
+        .finally(()=> setLoading(false));
+
+    }
+
+    function handleDeleteItem(productId: number, quantity = 1){
+        setLoading(true);
+
+        requests.Cart.deleteItem(productId, quantity)
+            .then((cart)=> setCart(cart))
+            .catch(error => console.log(error))
+            .finally(()=> setLoading(false));
+    }
   
 
-    // if(loading) return <CircularProgress/>
+     if(loading) return <CircularProgress/>
 
-    if(!cart) return <h1>Sepetinizde ürün yok.</h1>
+    if(cart?.cartItems?.length === 0) return <Alert severity="warning">Sepetinizde ürün yok</Alert>
 
     return (
          <TableContainer component={Paper}>
@@ -29,7 +50,7 @@ export default function ShoppingCartPage(){
           </TableRow>
         </TableHead>
         <TableBody>
-          {cart.cartItems.map((item) => (
+          {cart?.cartItems?.map((item) => (
             <TableRow
               key={item.productId}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -41,12 +62,22 @@ export default function ShoppingCartPage(){
                 {item.name}
               </TableCell>
               <TableCell align="right">{item.price}</TableCell>
-              <TableCell align="right">{item.quantity}</TableCell>
+              <TableCell align="right">
+                <LoadingButton loading={loading} onClick={()=> handleAddItem(item.productId)}>
+                <AddCircleOutline/>
+                </LoadingButton>
+                {item.quantity}
+                <LoadingButton loading={loading} onClick={()=> handleDeleteItem(item.productId)}>
+                <RemoveCircleOutline/>
+                </LoadingButton>
+                </TableCell>
               <TableCell align="right">{item.price*item.quantity} ₺</TableCell>
               <TableCell align="right">
-                <IconButton color="error">
+                <LoadingButton loading={loading} onClick={()=> handleDeleteItem(item.productId,item.quantity)}>
+
                     <Delete/>
-                </IconButton>
+
+                </LoadingButton>
               </TableCell>
             </TableRow>
           ))}
