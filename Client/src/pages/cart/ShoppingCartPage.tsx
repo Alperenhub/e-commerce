@@ -7,32 +7,33 @@ import requests from "../../api/request";
 
 export default function ShoppingCartPage(){
 
-    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState({loading: false, id: ""});
 
     const { cart, setCart } = useCartContext();
 
-    function handleAddItem(productId: number){
+    function handleAddItem(productId: number, id: string){
 
-        setLoading(true);
+        setStatus({loading: true, id: id});
 
         requests.Cart.addItem(productId)
         .then(cart => setCart(cart))
         .catch(error => console.log(error))
-        .finally(()=> setLoading(false));
+        .finally(()=> setStatus({loading: false, id: ""}));
+
 
     }
 
-    function handleDeleteItem(productId: number, quantity = 1){
-        setLoading(true);
+    function handleDeleteItem(productId: number, id:string, quantity = 1){
+        setStatus({loading: true, id: id});
 
         requests.Cart.deleteItem(productId, quantity)
             .then((cart)=> setCart(cart))
             .catch(error => console.log(error))
-            .finally(()=> setLoading(false));
+            .finally(()=> setStatus({loading: false, id: ""}));
     }
   
 
-     if(loading) return <CircularProgress/>
+    //  if(loading) return <CircularProgress/>
 
     if(cart?.cartItems?.length === 0) return <Alert severity="warning">Sepetinizde ürün yok</Alert>
 
@@ -63,17 +64,23 @@ export default function ShoppingCartPage(){
               </TableCell>
               <TableCell align="right">{item.price}</TableCell>
               <TableCell align="right">
-                <LoadingButton loading={loading} onClick={()=> handleAddItem(item.productId)}>
+                <LoadingButton 
+                loading={status.loading && status.id === "add" + item.productId} 
+                onClick={()=> handleAddItem(item.productId, "add"+ item.productId)}>
                 <AddCircleOutline/>
                 </LoadingButton>
                 {item.quantity}
-                <LoadingButton loading={loading} onClick={()=> handleDeleteItem(item.productId)}>
+                <LoadingButton 
+                loading={status.loading && status.id === "del" + item.productId} 
+                onClick={()=> handleDeleteItem(item.productId, "del"+ item.productId)}>
                 <RemoveCircleOutline/>
                 </LoadingButton>
                 </TableCell>
               <TableCell align="right">{item.price*item.quantity} ₺</TableCell>
               <TableCell align="right">
-                <LoadingButton loading={loading} onClick={()=> handleDeleteItem(item.productId,item.quantity)}>
+                <LoadingButton 
+                loading={status.loading && status.id === "del_all" + item.productId} 
+                onClick={()=> handleDeleteItem(item.productId, "del_all" + item.productId, item.quantity)}>
 
                     <Delete/>
 
