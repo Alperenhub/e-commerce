@@ -7,6 +7,7 @@ import requests from "../../api/request";
 import { LoadingButton } from '@mui/lab';
 import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
+import { currencyTRY } from "../../utils/formatCurrency";
 
 
 interface Props{
@@ -45,7 +46,7 @@ export const Product = ({ product }: Props) => {
           {product.description}
         </Typography> 
         <Typography variant="body2" component="h2" color="text-secondary">
-          {(product.price/100).toFixed(2)}$
+          {currencyTRY.format(product.price)}
         </Typography> 
         </CardContent> 
         <CardActions>
