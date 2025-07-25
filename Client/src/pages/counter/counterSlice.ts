@@ -29,5 +29,3 @@ export const counterSlice = createSlice({
 
 export const {increment, decrement, incrementByAmount} = counterSlice.actions;
 
-export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
-export const useAppSelector = useSelector.withTypes<RootState>();

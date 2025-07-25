@@ -8,6 +8,8 @@ import { LoadingButton } from '@mui/lab';
 import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import { currencyTRY } from "../../utils/formatCurrency";
+import { useAppDispatch } from "../../hooks/hooks";
+import { setCart } from "../counter/cartSlice";
 
 
 interface Props{
@@ -18,14 +20,14 @@ export const Product = ({ product }: Props) => {
 
   const [loading,setLoading] = useState(false);
 
-  const { setCart } = useCartContext();
+  const dispatch = useAppDispatch();
   
   function handleAddItem(productId: number){
     
     setLoading(true);
 
     requests.Cart.addItem(productId)
-      .then(cart => {setCart(cart);
+      .then(cart => {dispatch(setCart(cart));
                  toast.success("Sepetinize eklendi");
              })
       .catch(error => console.log(error))
