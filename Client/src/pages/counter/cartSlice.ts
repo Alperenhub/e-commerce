@@ -12,7 +12,7 @@ const initialState: CartState = {
     status: "idle"
 }
 
-export const addItemToCart = createAsyncThunk<Cart, {productId: number, quantity?: number}>(
+export const addItemToCart = createAsyncThunk<Cart, {productId: number, quantity?: number}>( //Bana Cart'ı döndür. productId ve quantity'i post et
     "cart/addItemToCart",
     async ({productId, quantity=1})=>{
         try{
