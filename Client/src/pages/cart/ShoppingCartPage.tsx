@@ -1,41 +1,16 @@
-import { useState } from "react"
 import { Alert, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { AddCircleOutline, Delete, RemoveCircleOutline } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
-import requests from "../../api/request";
-import { toast } from "react-toastify";
 import CartSummary from "./CartSummary";
 import { currencyTRY } from "../../utils/formatCurrency";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { setCart } from "../counter/cartSlice";
+import { addItemToCart, deleteItemFromCart } from "../counter/cartSlice";
 
 export default function ShoppingCartPage(){
 
-    const [status, setStatus] = useState({loading: false, id: ""});
 
-    const {cart} = useAppSelector(state => state.cart);
+    const {cart, status} = useAppSelector(state => state.cart);
     const dispatch = useAppDispatch();
-
-    function handleAddItem(productId: number, id: string){
-
-        setStatus({loading: true, id: id});
-
-        requests.Cart.addItem(productId)
-        .then(cart => dispatch(setCart(cart)))
-        .catch(error => console.log(error))
-        .finally(()=> setStatus({loading: false, id: ""}));
-
-
-    }
-
-    function handleDeleteItem(productId: number, id:string, quantity = 1){
-        setStatus({loading: true, id: id});
-
-        requests.Cart.deleteItem(productId, quantity)
-            .then((cart)=> dispatch(setCart(cart)))
-            .catch(error => console.log(error))
-            .finally(()=> setStatus({loading: false, id: ""}));
-    }
   
 
     //  if(loading) return <CircularProgress/>
@@ -70,24 +45,24 @@ export default function ShoppingCartPage(){
               <TableCell align="right">{currencyTRY.format(item.price)}</TableCell>
               <TableCell align="right">
                 <LoadingButton 
-                loading={status.loading && status.id === "add" + item.productId} 
-                onClick={()=> handleAddItem(item.productId, "add"+ item.productId)}>
+                loading={status === "pendingAddItem" + item.productId} 
+                onClick={()=> dispatch(addItemToCart({productId: item.productId}))}>
                 <AddCircleOutline/>
                 </LoadingButton>
                 {item.quantity}
                 <LoadingButton 
-                loading={status.loading && status.id === "del" + item.productId} 
-                onClick={()=> handleDeleteItem(item.productId, "del"+ item.productId)}>
+                loading={status === "pendingDeleteItem"+ item.productId +"single"} 
+                onClick={()=> 
+                dispatch(deleteItemFromCart({productId: item.productId, quantity:1, key:"single"}))}>
                 <RemoveCircleOutline/>
                 </LoadingButton>
                 </TableCell>
               <TableCell align="right">{currencyTRY.format(item.price*item.quantity)} </TableCell>
               <TableCell align="right">
                 <LoadingButton 
-                loading={status.loading && status.id === "del_all" + item.productId} 
+                loading={status === "pendingDeleteItem" + item.productId + "all"} 
                 onClick={()=> {
-                  handleDeleteItem(item.productId, "del_all" + item.productId, item.quantity)
-                  toast.error("Ürün sepetinizden silindi.")
+                 dispatch(deleteItemFromCart({productId: item.productId, quantity: item.quantity, key:"all"}))
                   }}>
 
                     <Delete/>
