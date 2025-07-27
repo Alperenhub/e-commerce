@@ -1,14 +1,14 @@
 using API.Entity;
+using Apı.Entity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data;
 
-public class DataContext :DbContext
+public class DataContext(DbContextOptions options) : IdentityDbContext<AppUser, AppRole, string>(options)
 {
-    public DataContext(DbContextOptions options): base(options)
-    {
-        
-    }
+  
     public DbSet<Product> Products => Set<Product>();  //uyarıyı engellemek için yaptık ayrıca:{ get; set; } = null!;
 
     public DbSet<Cart> Carts => Set<Cart>();

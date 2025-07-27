@@ -1,5 +1,7 @@
 using API.Data;
+using API.Entity;
 using API.Middlewares;
+using Apı.Entity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,6 +46,7 @@ if (app.Environment.IsDevelopment())
 
 // ✅ CORS middleware'ini doğru sırayla uygula
 app.UseCors("AllowReactApp");
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<DataContext>();
 
 app.UseHttpsRedirection();
 

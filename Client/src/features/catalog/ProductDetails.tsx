@@ -9,28 +9,25 @@ import { AddShoppingCart } from "@mui/icons-material";
 import { currencyTRY } from "../../utils/formatCurrency";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { addItemToCart, setCart } from "../counter/cartSlice";
+import { fetchProductById, selectProductById } from "./catalogSlice";
 
 export default function ProductDetailsPage(){
 
     const {cart, status} = useAppSelector(state => state.cart);
     const dispatch = useAppDispatch();
     const {id} = useParams<{id:string}>();
-    const [product, setProduct] = useState<IProduct|null>(null);
-    const [loading, setLoading] = useState(true);
-
+    const product = useAppSelector(state => selectProductById(state,Number(id)));
+    const {status:loading} = useAppSelector(state=> state.catalog);
     const item = cart?.cartItems?.find(i=> i.productId == product?.id);
 
     useEffect(()=>{
-       id&& requests.Catalog.details(parseInt(id))
-        // .then(res => res.json())
-        .then(data => setProduct(data))
-        .catch(error=>console.log(error))
-        .finally(()=> setLoading(false));
+        if(!product && id)
+        dispatch(fetchProductById(parseInt(id)))
     },[id])
 
     
 
-    if(loading) return <CircularProgress/>
+    if(loading=== "pendingFetchProductById") return <CircularProgress/>
 
     if(!product) return <h5>Product not found...</h5>;
 

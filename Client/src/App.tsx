@@ -1,13 +1,13 @@
 
 import { useEffect, useState } from "react";
-import { Header } from "./components/Header";
+import { Header } from "./layout/Header";
 import { CircularProgress, Container, CssBaseline } from "@mui/material";
 import { Outlet } from "react-router";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import requests from "./api/request";
 import { useAppDispatch } from "./hooks/hooks";
-import { setCart } from "./pages/counter/cartSlice";
+import { setCart } from "./features/counter/cartSlice";
 
 
 
