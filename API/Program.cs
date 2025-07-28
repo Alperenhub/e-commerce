@@ -2,6 +2,7 @@ using API.Data;
 using API.Entity;
 using API.Middlewares;
 using Apı.Entity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,21 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("defaultConnection");
     options.UseSqlite(connectionString);
+});
+
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<DataContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireDigit = false;
+
+    options.User.RequireUniqueEmail = true;
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
 });
 
 // ✅ CORS policy tanımı
@@ -46,7 +62,6 @@ if (app.Environment.IsDevelopment())
 
 // ✅ CORS middleware'ini doğru sırayla uygula
 app.UseCors("AllowReactApp");
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<DataContext>();
 
 app.UseHttpsRedirection();
 
@@ -56,5 +71,7 @@ app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();
+
+SeedDatabase.Initialize(app);
 
 app.Run();
