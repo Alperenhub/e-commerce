@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Na97yjSKUAI=",
+  "dgSpecHash": "3ASZi2tPMio=",
   "success": true,
   "projectFilePath": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Furkan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.7\\microsoft.aspnetcore.cryptography.internal.9.0.7.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\9.0.7\\microsoft.aspnetcore.cryptography.keyderivation.9.0.7.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\9.0.7\\microsoft.aspnetcore.identity.entityframeworkcore.9.0.7.nupkg.sha512",
@@ -41,6 +42,8 @@
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.13.0\\microsoft.identitymodel.abstractions.8.13.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.13.0\\microsoft.identitymodel.jsonwebtokens.8.13.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.identitymodel.logging\\8.13.0\\microsoft.identitymodel.logging.8.13.0.nupkg.sha512",
+    "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.0.3\\microsoft.identitymodel.protocols.7.0.3.nupkg.sha512",
+    "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.0.3\\microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.13.0\\microsoft.identitymodel.tokens.8.13.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",

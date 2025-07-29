@@ -1,9 +1,13 @@
+using System.Text;
 using API.Data;
 using API.Entity;
 using API.Middlewares;
+using API.Services;
 using Apı.Entity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +33,31 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
 });
 
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+})
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = false,
+                        ValidIssuer = "alpy.com",
+                        //ValidIssuers = ["",""]
+                        ValidateAudience = false,
+                        ValidAudience = "abc",
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(
+                            builder.Configuration["JWTSecurity:SecretKey"]!)),
+                            ValidateLifetime = true
+                    
+                    };
+
+                });
+
 // ✅ CORS policy tanımı
 builder.Services.AddCors(options =>
 {
@@ -44,6 +73,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
 
@@ -67,6 +98,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

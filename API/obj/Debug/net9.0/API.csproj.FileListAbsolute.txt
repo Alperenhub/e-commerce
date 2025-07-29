@@ -160,3 +160,11 @@ C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.Extensions.Log
 C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
