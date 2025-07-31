@@ -168,3 +168,4 @@ C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.
 C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Furkan\Desktop\e-commerce\api\bin\Debug\net9.0\Scalar.AspNetCore.dll

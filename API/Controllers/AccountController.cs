@@ -19,21 +19,25 @@ public class AccountController : ControllerBase
         _tokenService = tokenService;
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Login(LoginDTO model)
+    [HttpPost("login")]
+    public async Task<ActionResult<UserDTO>> Login(LoginDTO model)
     {
         var user = await _userManager.FindByNameAsync(model.UserName);
 
         if (user == null)
         {
-            return BadRequest(new { message = "username hatalı" });
+            return BadRequest(new ProblemDetails {Title = "username hatalı"});
         }
 
         var result = await _userManager.CheckPasswordAsync(user, model.Password);
 
         if (result)
         {
-            return Ok(new { token = await _tokenService.GenerateToken(user) });
+            return Ok(new UserDTO
+            {
+                Name= user.Name!,
+                Token = await _tokenService.GenerateToken(user)
+            });
         }
 
         return Unauthorized();

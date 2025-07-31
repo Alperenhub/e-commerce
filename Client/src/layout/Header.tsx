@@ -1,5 +1,5 @@
 import { ShoppingCart } from "@mui/icons-material";
-import { AppBar, Badge, Box, IconButton, List, ListItem, Toolbar, Typography } from "@mui/material";
+import { AppBar, Badge, Box, Button, IconButton, List, ListItem, Stack, Toolbar, Typography } from "@mui/material";
 import { Link, NavLink } from "react-router";
 import { useAppSelector } from "../hooks/hooks";
 
@@ -8,6 +8,12 @@ const links = [
   { title: "Catalog", to: "/catalog"},
   { title: "About", to: "/about"},
   { title: "Contact", to: "/contact"},
+]
+
+const authLinks = [
+  {title: "Login", to: "/login"},
+  {title: "Register", to: "/register"}
+
 ]
 
 const navStyles = {
@@ -45,6 +51,12 @@ const navStyles = {
                 <ShoppingCart/>
               </Badge>
             </IconButton>
+
+            <Stack direction="row">
+          {authLinks.map(link =>
+            <Button key={link.to} component={NavLink} to={link.to} sx={navStyles}>{link.title}</Button>
+          )}
+        </Stack>
         </Box>
 
       </Toolbar>

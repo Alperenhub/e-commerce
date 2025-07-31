@@ -14,6 +14,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.Design": "9.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0",
+          "Scalar.AspNetCore": "2.6.5",
           "Swashbuckle.AspNetCore.SwaggerUI": "7.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.13.0"
         },
@@ -698,6 +699,14 @@
           }
         }
       },
+      "Scalar.AspNetCore/2.6.5": {
+        "runtime": {
+          "lib/net9.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.6.5.0",
+            "fileVersion": "2.6.5.0"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
         "dependencies": {
           "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
@@ -1248,6 +1257,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.6.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9HfrTG0yTZoTFrqtwzKb0bcqH6nS1RJEtIsaumyoWWOuAa660zjvsOJPSgmYE/XzBsdPu0Y+NmA9gSDiTnrWbQ==",
+      "path": "scalar.aspnetcore/2.6.5",
+      "hashPath": "scalar.aspnetcore.2.6.5.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
       "type": "package",
