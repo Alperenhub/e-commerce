@@ -1,8 +1,8 @@
 import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Badge, Box, Button, IconButton, List, ListItem, Stack, Toolbar, Typography } from "@mui/material";
 import { Link, NavLink } from "react-router";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { logout } from "../features/account/accountSlice";
+import { useAppDispatch, useAppSelector } from "../store/store";
 
 const links = [
   { title: "Home", to: "/"},

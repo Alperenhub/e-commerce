@@ -1,15 +1,12 @@
 import { CircularProgress, Divider, Grid, Stack, Table, TableBody, TableCell, TableContainer, TableRow, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
-import { IProduct } from "../../model/IProduct";
-import requests from "../../api/request";
 import { LoadingButton } from "@mui/lab";
 import { AddShoppingCart } from "@mui/icons-material";
-
 import { currencyTRY } from "../../utils/formatCurrency";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { addItemToCart, setCart } from "../counter/cartSlice";
+import { addItemToCart } from "../counter/cartSlice";
 import { fetchProductById, selectProductById } from "./catalogSlice";
+import { useAppDispatch, useAppSelector } from "../../store/store";
 
 export default function ProductDetailsPage(){
 
