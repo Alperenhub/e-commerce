@@ -12,6 +12,7 @@ public class DataContext(DbContextOptions options) : IdentityDbContext<AppUser, 
     public DbSet<Product> Products => Set<Product>();  //uyarıyı engellemek için yaptık ayrıca:{ get; set; } = null!;
 
     public DbSet<Cart> Carts => Set<Cart>();
+    public DbSet<Order> Orders => Set<Order>(); 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
