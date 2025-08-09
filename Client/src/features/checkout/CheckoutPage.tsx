@@ -5,6 +5,7 @@ import PaymentForm from "./PaymentForm";
 import Review from "./Review";
 import { useState } from "react";
 import {  ChevronLeftRounded, ChevronRightRounded } from "@mui/icons-material";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 
 
 const steps = ["Teslimat Bilgileri", "Ödeme sayfası", "Sipariş Özeti"]
@@ -26,7 +27,10 @@ export default function CheckoutPage(){
 
     const [activeStep, setActiveStep] = useState<number>(0);
 
-    function handleNext(){
+    const methods = useForm();
+
+    function handleNext(data: FieldValues){
+        console.log(data);
         setActiveStep(activeStep +1);
     }
      function handlePrevious(){
@@ -34,16 +38,20 @@ export default function CheckoutPage(){
     }
 
     return(
-
+        <FormProvider {...methods}>
         <Paper>
 
-        <Grid container sx={{p:4}} spacing={2}>
-            <Grid size={4}>
+        <Grid container spacing={2}>
+            <Grid size={4} sx={{
+                borderRight: "1px solid",
+                borderColor: "divider",
+                p:3
+            }}>
                 <Info/>
             </Grid>
-            <Grid size={8}>
+            <Grid size={8} sx={{p:3}}>
                 <Box> 
-                    <Stepper activeStep={activeStep} sx={{height:40}}>
+                    <Stepper activeStep={activeStep} sx={{height:40, mb:4}}>
                         {steps.map((label)=>(
                             <Step key={label}>
                                  <StepLabel>{label}</StepLabel>
@@ -58,7 +66,7 @@ export default function CheckoutPage(){
                         <h2>Sipariş tamamlandı.</h2>
 
                     ) : (
-                        <> 
+                        <form onSubmit={methods.handleSubmit(handleNext)}> 
                            {getStepContent(activeStep)}
 
                 <Box>
@@ -80,12 +88,14 @@ export default function CheckoutPage(){
                             }
 
 
-                        <Button startIcon={<ChevronRightRounded/>} variant="contained" onClick={handleNext}> İleri </Button>
+                        <Button 
+                        type="submit"
+                        startIcon={<ChevronRightRounded/>} variant="contained"> İleri </Button>
 
                     </Box>
 
                 </Box>
-                        </>
+                        </form>
                     )}
                  
 
@@ -95,6 +105,6 @@ export default function CheckoutPage(){
         </Grid>
 
         </Paper>
-
+        </FormProvider>
     )
 }
