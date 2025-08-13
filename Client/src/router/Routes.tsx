@@ -13,6 +13,7 @@ import LoginPage from "../features/account/LoginPage";
 import RegisterPage from "../features/account/RegisterPage";
 import CheckoutPage from "../features/checkout/CheckoutPage";
 import AuthGuard from "./AuthGuard";
+import OrderList from "../features/orders/OrderList";
 
 export const router = createBrowserRouter([
     {
@@ -30,8 +31,9 @@ export const router = createBrowserRouter([
             {path: "catalog/:id", element: <ProductDetailsPage/>},
             {path: "login", element: <LoginPage/>},            
             {path: "register", element: <RegisterPage/>}, 
-            {element: <AuthGuard/>, children: [
-            {path: "checkout", element: <CheckoutPage/>}         
+             {element: <AuthGuard/>, children: [
+             {path: "checkout", element: <CheckoutPage/>},         
+             {path: "orders", element: <OrderList/>}         
             ]},
             {path: "*", element: <Navigate to="/not-found"/>},
         ]
