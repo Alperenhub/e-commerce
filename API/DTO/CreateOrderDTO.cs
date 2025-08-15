@@ -14,4 +14,14 @@ public class CreateOrderDTO
 
     public string? AddressLine { get; set; }
 
+    public string? CardName { get; set; }
+
+    public string? CardNumber { get; set; }
+
+    public string? CardExpireMonth { get; set; }
+
+    public string? CardExpireYear { get; set; }
+    
+    public string? CardCvc { get; set; }
+
 }
