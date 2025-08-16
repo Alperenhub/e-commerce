@@ -36,7 +36,6 @@ function App() {
     <CssBaseline/> 
       <Header/>
       <Container>
-      <p>Hor görme hiç bu keli</p>
       <Outlet/>
       </Container>
 

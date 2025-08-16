@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7OUbEKAPXoM=",
+  "dgSpecHash": "TDOribmxQH4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Furkan\\Desktop\\e-commerce\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\Furkan\\Desktop\\e-commerce\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Furkan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\iyzipay\\2.1.67\\iyzipay.2.1.67.nupkg.sha512",

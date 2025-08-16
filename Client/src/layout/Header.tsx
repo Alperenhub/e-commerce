@@ -7,15 +7,15 @@ import { clearCart } from "../features/counter/cartSlice";
 import { useState } from "react";
 
 const links = [
-  { title: "Home", to: "/"},
-  { title: "Catalog", to: "/catalog"},
-  { title: "About", to: "/about"},
-  { title: "Contact", to: "/contact"},
+  { title: "Anasayfa", to: "/"},
+  { title: "Katalog", to: "/catalog"},
+  { title: "Hakkımızda", to: "/about"},
+  { title: "İletişim", to: "/contact"},
 ]
 
 const authLinks = [
-  {title: "Login", to: "/login"},
-  {title: "Register", to: "/register"}
+  {title: "Giriş Yap", to: "/login"},
+  {title: "Kayıt Ol", to: "/register"}
 
 ]
 

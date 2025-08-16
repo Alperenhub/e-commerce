@@ -33,7 +33,7 @@ export default function LoginPage(){
                 <Avatar sx={{mx: "auto", color: "secondary.main",textAlign:"center", mb:1}}>
                     <LockOutlined/>
                 </Avatar>
-                <Typography component="h1" variant="h5" sx={{textAlign:"center"}}>Login</Typography>
+                <Typography component="h1" variant="h5" sx={{textAlign:"center"}}>Giriş Yap</Typography>
                 <Box
                 onSubmit={handleSubmit(submitForm)} 
                 component="form" 
@@ -41,7 +41,7 @@ export default function LoginPage(){
                 sx={{mt:2}}>
                     <TextField
                     {...register("username",{required: "username is required"} )}
-                    label="Enter username"
+                    label="Kullanıcı adı"
                     fullWidth required autoFocus 
                     sx={{mb:2}}
                     size="small"
@@ -55,7 +55,7 @@ export default function LoginPage(){
                         value:4,
                         message:"En az 4 karakter lazım"
                     }})}
-                    label="Enter password"
+                    label="Parola"
                     type="password" 
                     fullWidth required 
                     sx={{mb:2}}
